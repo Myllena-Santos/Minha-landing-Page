@@ -66,7 +66,7 @@ strong {
 }
 
 /* ====================
-   HEADER CLEAN
+   HEADER
    ==================== */
 header {
     background-color: #11111f;
@@ -214,28 +214,51 @@ nav {
 }
 
 .skill-item {
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
+}
+
+.skill-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
 }
 
 .skill-name {
-    display: block;
-    margin-bottom: 0.5rem;
     color: #ffffff;
     font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.skill-percent {
+    color: #00ffff;
+    font-weight: 500;
+    font-size: 1rem;
 }
 
 .skill-bar {
-    height: 8px;
+    height: 10px;
     background-color: #222233;
-    border-radius: 4px;
+    border-radius: 5px;
     overflow: hidden;
 }
 
 .skill-level {
     height: 100%;
     background: linear-gradient(90deg, #00ffff, #008b8b);
-    border-radius: 4px;
-    transition: width 1s ease;
+    border-radius: 5px;
+    width: 0;
+    animation: fillBar 2s ease-out forwards;
+}
+
+/* Animação das barras */
+@keyframes fillBar {
+    from {
+        width: 0;
+    }
+    to {
+        /* A largura é definida inline no HTML */
+    }
 }
 
 /* ====================
@@ -333,15 +356,19 @@ nav {
     margin-top: 1rem;
 }
 
-.project-links a {
-    color: #888888;
+.project-link {
+    color: #00ffff;
     text-decoration: none;
-    font-size: 0.85rem;
-    transition: color 0.3s ease;
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid #00ffff;
+    border-radius: 4px;
+    transition: all 0.3s ease;
 }
 
-.project-links a:hover {
-    color: #00ffff;
+.project-link:hover {
+    background: rgba(0, 255, 255, 0.1);
+    transform: translateY(-2px);
 }
 
 .project-tech {
